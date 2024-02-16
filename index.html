@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SAMPLE</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Sidebar styles */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #ADD8E6; /* Light blue */
+            padding-top: 20px;
+            transition: all 0.3s ease; /* Adding transition for smooth animation */
+        }
+
+        .sidebar label {
+            padding: 10px;
+            display: block;
+            color: #191970 ;
+        }
+
+        .sidebar label:hover {
+            background-color: #555;
+        }
+
+        /* Style for checkboxes */
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        /* Style for custom checkboxes */
+        input[type="checkbox"] + label:before {
+            content: "\2610"; /* Unicode for empty checkbox */
+            margin-right: 5px;
+        }
+
+        /* Style for checked custom checkboxes */
+        input[type="checkbox"]:checked + label:before {
+            content: "\2611"; /* Unicode for checked checkbox */
+        }
+
+        /* Collapsed state */
+        .sidebar.collapsed {
+            width: 50px;
+        }
+
+        .sidebar.collapsed label {
+            display: none;
+        }
+
+        .sidebar.collapsed input[type="checkbox"] + label:before {
+            content: "\2630"; /* Unicode for hamburger menu icon */
+        }
+
+        /* Content style */
+        .content {
+            margin-left: 250px; /* Adjust according to sidebar width */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        
+        
+        <details>
+            <summary><label for="mobiles">Mobiles</label></summary>
+            <ol>
+                <input type="checkbox" id="medical1"><label for="medical1">Samsung</label>
+                <input type="checkbox" id="medical2"><label for="medical2">NokiaS</label>
+                <input type="checkbox" id="medical3"><label for="medical3">Lenovo</label>
+                <input type="checkbox" id="medical4"><label for="medical4">Iphone</label>
+                <input type="checkbox" id="medical5"><label for="medical5">China</label>
+                <input type="checkbox" id="medical6"><label for="medical6">Dell</label>
+            </ol>
+        </details>
+        
+        <input type="checkbox" id="sports_checkbox"><label for="sports_checkbox">Sports Facilities</label>
+        <details>
+            <ol>
+                <li><input type="checkbox" id="sports1"><label for="sports1">Samsung</label></li>
+                <li><input type="checkbox" id="sports2"><label for="sports2">NokiaS</label></li>
+                <li><input type="checkbox" id="sports3"><label for="sports3">Lenovo</label></li>
+                <li><input type="checkbox" id="sports4"><label for="sports4">Iphone</label></li>
+                <li><input type="checkbox" id="sports5"><label for="sports5">China</label></li>
+                <li><input type="checkbox" id="sports6"><label for="sports6">Dell</label></li>
+            </ol>
+        </details>
+
+        <input type="checkbox" id="educational_checkbox"><label for="educational_checkbox">Educational Facilities</label>
+        <details>
+            <ol>
+                <li><input type="checkbox" id="educational1"><label for="educational1">Samsung</label></li>
+                <li><input type="checkbox" id="educational2"><label for="educational2">NokiaS</label></li>
+                <li><input type="checkbox" id="educational3"><label for="educational3">Lenovo</label></li>
+                <li><input type="checkbox" id="educational4"><label for="educational4">Iphone</label></li>
+                <li><input type="checkbox" id="educational5"><label for="educational5">China</label></li>
+                <li><input type="checkbox" id="educational6"><label for="educational6">Dell</label></li>
+            </ol>
+        </details>
+        <button onclick="toggleSidebar()">Toggle</button>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <!-- Your main content goes here -->
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("collapsed");
+        }
+    </script>
+</body>
+</html>
